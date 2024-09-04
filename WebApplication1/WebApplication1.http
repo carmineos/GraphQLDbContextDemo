@@ -1,0 +1,13 @@
+@WebApplication1_HostAddress = http://localhost:5115
+
+GET {{WebApplication1_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+POST {{WebApplication1_HostAddress}}/graphql
+Content-Type: application/json
+Accept: application/json
+{
+  "query": "{ movies { id name }  }",
+  "variables": null
+}
