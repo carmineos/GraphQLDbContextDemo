@@ -11,3 +11,14 @@ Accept: application/json
   "query": "{ movies { id name }  }",
   "variables": null
 }
+
+###
+POST {{WebApplication1_HostAddress}}/query
+Content-Type: application/json
+Accept: application/json
+{
+    "query": "query ($movieId: UUID!) {  movie(id: $movieId) {   name, director { firstName }  }}",
+    "variables": {
+        "movieId": "2b3c4d5e-6789-1011-1213-141516171819"
+    }
+}
